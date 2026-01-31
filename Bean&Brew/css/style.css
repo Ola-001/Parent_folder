@@ -11,6 +11,12 @@ body {
     background-color: #fff;
 }
 
+h2 {
+    font-size: 1.8rem;
+    color: #2f1b0c;
+    margin-bottom: 20px;
+}
+
 /* ===================== HEADER ===================== */
 header {
     position: fixed;
@@ -874,41 +880,151 @@ h1 {
 
 /* ===================== PROFILE PAGE ===================== */
 .profile-container {
-    max-width: 600px;
-    margin: 80px auto;
-    background: #fff;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff7ef;
     padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.profile-container h1 {
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.profile-info h1 {
+    margin: 0;
     font-size: 2rem;
-    color: #2f1b0c;
-    margin-bottom: 10px;
+    color: #3a2618;
 }
 
-.profile-container p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 20px;
+.profile-info p {
+    margin: 5px 0 0;
+    color: #6b5a4a;
 }
 
-.profile-container a {
-    display: inline-block;
-    padding: 10px 20px;
+.logout-btn {
     background: #c59d5f;
-    color: white;
+    padding: 10px 18px;
     border-radius: 8px;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 
-.profile-container a:hover {
+.logout-btn:hover {
     background: #a66a3a;
 }
+
+.section-block {
+    margin-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6d8c3;
+}
+
+.section-block h2 {
+    font-size: 1.7rem;
+    color: #c98714;
+    border-left: 6px solid #c59d5f;
+    padding-left: 12px;
+    margin-bottom: 20px;
+}
+
+.empty-text {
+    color: #7a6a58;
+    margin: 10px 0 20px;
+}
+
+.order-card {
+    background: #ffffff;
+    border: 1px solid #e6d8c3;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-header h3 {
+    margin: 0;
+    color: #3a2618;
+}
+
+.order-date {
+    color: #7a6a58;
+    font-size: 0.9rem;
+}
+
+.order-total {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #4a3a2a;
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.item-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee2d2;
+    color: #4a3a2a;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.activity-item {
+    background: #fff;
+    border-left: 5px solid #c59d5f;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-item strong {
+    color: #3a2618;
+}
+
+.activity-item p {
+    margin: 3px 0 0;
+    color: #6b5a4a;
+}
+
+.activity-item em {
+    color: #7a6a58;
+    font-size: 0.85rem;
+}
+
+
+
 
 /* ===================== CONTACT HERO ===================== */
 .contact-hero {

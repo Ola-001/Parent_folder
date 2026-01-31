@@ -1,6 +1,9 @@
 <?php
 include "db.php";
+include 'auth.php';
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -55,13 +58,9 @@ include "db.php";
 
     </div>
 </section>
-
-
-<script src="js/style.js"></script>
 <?php include "footer.php"; ?>
 
-
-
+<script src="js/style.js"></script>
 
 </body>
 </html>

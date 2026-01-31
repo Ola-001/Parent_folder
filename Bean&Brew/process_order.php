@@ -1,5 +1,6 @@
 <?php
 session_start();
+include __DIR__ . "/db.php"; // ensures correct path
 
 // Only handle POST requests
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -9,13 +10,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $address = trim($_POST['address'] ?? '');
     $payment = trim($_POST['payment'] ?? '');
 
+    // Validate form
     if ($name === '' || $email === '' || $address === '' || $payment === '') {
         echo "<h2>Missing information</h2>";
         echo "<p>Please fill in all fields.</p>";
         exit;
     }
 
-    // Clear cart after order
+    // Insert order into database
+    $user_id = $_SESSION['user_id'] ?? null;
+    $total = 0;
+
+    // Calculate total
+    if (!empty($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $item) {
+            $total += $item['price'] * $item['quantity'];
+        }
+    }
+
+    // Insert into orders table
+    $stmt = $conn->prepare("INSERT INTO orders (user_id, total) VALUES (?, ?)");
+    $stmt->bind_param("id", $user_id, $total);
+    $stmt->execute();
+
+    $order_id = $stmt->insert_id;
+
+    // Insert order items
+    if (!empty($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $item) {
+            $product_id = $item['id'];
+            $quantity   = $item['quantity'];
+            $price      = $item['price'];
+
+            $stmt = $conn->prepare("INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("iiid", $order_id, $product_id, $quantity, $price);
+            $stmt->execute();
+        }
+    }
+
+    // Log activity
+    if (isset($_SESSION['user_id'])) {
+        $uid = $_SESSION['user_id'];
+        $action = "Completed order";
+        $details = "Order ID: $order_id, Total: £" . number_format($total, 2);
+
+        $log = $conn->prepare("INSERT INTO user_activity (user_id, action, details) VALUES (?, ?, ?)");
+        $log->bind_param("iss", $uid, $action, $details);
+        $log->execute();
+    }
+
+    // Clear cart
     $_SESSION['cart'] = [];
 }
 ?>
@@ -89,7 +133,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     </style>
 </head>
-
 <body>
 
 <div class="success-card">

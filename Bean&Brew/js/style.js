@@ -24,17 +24,19 @@ document.querySelectorAll(".product-card").forEach((card) => {
 document.querySelectorAll(".add-to-cart").forEach(button => {
     button.addEventListener("click", function () {
 
+        let id = this.dataset.id;       // product ID
         let name = this.dataset.name;
         let price = this.dataset.price;
-        let image = this.dataset.image; // NEW: image support
+        let image = this.dataset.image;
 
         fetch("add_to_cart.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: `name=${encodeURIComponent(name)}&price=${price}&image=${encodeURIComponent(image)}`
+            body: `id=${id}&name=${encodeURIComponent(name)}&price=${price}&image=${encodeURIComponent(image)}`
         })
+
         .then(res => res.text())
         .then(data => {
             if (data.trim() === "success") {
@@ -69,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// ===================== MOBILE NAV =====================
 function openNav() {
     document.getElementById("mobileOverlay").style.height = "100%";
 }

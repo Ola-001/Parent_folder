@@ -1,6 +1,8 @@
 <?php
+
 session_start();
 include "db.php";
+include 'auth.php';
 ?>
 
 <!DOCTYPE html>
