@@ -1,0 +1,259 @@
+/* ================================
+   AUTH PAGE LAYOUT
+================================ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fb;
+    min-height: 100vh;
+}
+
+/* Container */
+.auth-container {
+    width: 100%;
+    max-width: 550px;
+    padding: 20px;
+    height: fit-content;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+/* Logo */
+.auth-logo {
+    text-align: center;
+    margin-bottom: 10px;
+    animation: fadeIn 0.8s ease;
+}
+
+.auth-logo img {
+    width: 300px; /* Adjusted to a clean, professional size */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+    transition: 0.3s ease;
+    margin-bottom: -40px; /* Slight lift for perfect spacing */
+}
+
+.auth-logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Card */
+.auth-card {
+    background: #ffffff;
+    padding: 50px 55px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Heading */
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #0D1B2A;
+}
+
+.auth-subtitle {
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    color: #ff914d;
+    opacity: 0.9;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #0D1B2A;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 10px;
+    border: 1px solid #cfd9e3;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ff914d;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255,145,77,0.4);
+}
+
+/* Button */
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff914d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background: #e67c39;
+    transform: translateY(-2px);
+}
+
+/* Forgot Password */
+.forgot-password {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.forgot-password a {
+    color: #ff914d;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message */
+.error {
+    background: #ffdddd;
+    color: #b30000;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Switch Message */
+.switch-msg {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.switch-msg a {
+    color: #ff914d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.switch-msg a:hover {
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 25px 20px;
+    }
+    .auth-card h2 {
+        font-size: 24px;
+    }
+    .auth-logo img {
+        width: 180px;
+        margin-bottom: -30px;
+    }
+}
+
+/* Select Dropdown Styling */
+.input-group select {
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 10px;
+    border: 1px solid #cfd9e3;
+    font-size: 16px;
+    background: #ffffff;
+    color: #0D1B2A;
+    cursor: pointer;
+    transition: 0.3s;
+    appearance: none; /* removes default arrow for cleaner look */
+}
+
+/* Focus effect */
+.input-group select:focus {
+    border-color: #ff914d;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255,145,77,0.4);
+}
+
+/* Optional: custom dropdown arrow */
+.input-group {
+    position: relative;
+}
+
+.input-group::after {
+    content: "▼";
+    font-size: 12px;
+    color: #ff914d;
+    position: absolute;
+    right: 12px;
+    top: 42px; /* adjust if needed */
+    pointer-events: none;
+}
+
+/* Container (was .auth-container) */
+.forms-container {
+    width: 100%;
+    max-width: 650px;   /* bigger container */
+    margin: 80px auto;  /* centers it without shrinking */
+    padding: 20px;
+}
+
+/* Card (was .auth-card) */
+.form-card {
+    background: #ffffff;
+    padding: 55px 60px;   /* bigger card */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Logo */
+.auth-logo img {
+    width: 300px; /* bigger logo */
+    height: auto;
+    margin-bottom: -20px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+    transition: 0.3s ease;
+}
+
+/* Inputs bigger */
+.input-group input,
+.input-group select {
+    font-size: 18px;
+    padding: 14px 10px;
+}
+
+/* Button bigger */
+button,
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff914d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}

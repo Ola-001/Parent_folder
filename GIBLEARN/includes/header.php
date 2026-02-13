@@ -1,48 +1,111 @@
-<?php 
-session_start(); 
+<?php
+
+// Base URL for your project
+$BASE_URL = "/Parent_folder/GIBLEARN";
 ?>
 
-<header> 
-    <?php if(!isset($_SESSION['user_id'])): ?>
-        <!-- PUBLIC HEADER -->
-        <nav>
-            <a href="/GIBLEARN/index.php">Home</a>
-            <a href="/GIBLEARN/about.php">How it works</a>
-            <a href="/GIBLEARN/resource.php">Resource</a>
-            <a href="/GIBLEARN/login.php">Login</a>
-            <a href="/GIBLEARN/register.php">Register</a>
-        </nav>
+<header>
+    <div class="nav-container">
 
-    <?php else: ?>
-        <!-- LOGGED-IN HEADER -->
-        <?php $role = $_SESSION['role']; ?>
+        <!-- LOGO -->
+        <div class="logo">
+            <a href="<?= $BASE_URL ?>/index.php">
+                <img src="<?= $BASE_URL ?>/images/LOGO.png" alt="GIBLEARN Logo">
+            </a>
+        </div>
 
-        <nav>
-            <?php if ($role === 'student'): ?>
-                <a href="/GIBLEARN/student/student_dash.php">Dashboard</a>
-                <a href="/GIBLEARN/student/course.php">Courses</a>
-                <a href="/GIBLEARN/messaging/inbox.php">Messages</a>
-                <a href="/GIBLEARN/profile.php">Profile</a>
-                <a href="/GIBLEARN/settings.php">Settings</a>
-                <a href="/GIBLEARN/logout.php">Logout</a>
+        <!-- NAVIGATION -->
+        <?php if(!isset($_SESSION['user_id'])): ?>
 
-            <?php elseif ($role === 'tutor'): ?>
-                <a href="/GIBLEARN/tutor/tutor_dash.php">Dashboard</a>
-                <a href="/GIBLEARN/tutor/create_course.php">Create Course</a>
-                <a href="/GIBLEARN/messaging/inbox.php">Messages</a>
-                <a href="/GIBLEARN/profile.php">Profile</a>
-                <a href="/GIBLEARN/settings.php">Settings</a>
-                <a href="/GIBLEARN/logout.php">Logout</a>
+            <nav class="nav-links">
+                <a href="<?= $BASE_URL ?>/index.php">Home</a>
+                <a href="<?= $BASE_URL ?>/about.php">How it works</a>
+                <a href="<?= $BASE_URL ?>/resource.php">Resource</a>
+                <a href="<?= $BASE_URL ?>/login.php">Login</a>
+                <a href="<?= $BASE_URL ?>/register.php">Register</a>
+            </nav>
 
-            <?php elseif ($role === 'admin'): ?>
-                <a href="/GIBLEARN/admin/admin_dash.php">Dashboard</a>
-                <a href="/GIBLEARN/admin/manage_users.php">Manage Users</a>
-                <a href="/GIBLEARN/admin/approve_courses.php">Approve Courses</a>
-                <a href="/GIBLEARN/admin/reports.php">Reports</a>
-                <a href="/GIBLEARN/settings.php">Settings</a>
-                <a href="/GIBLEARN/logout.php">Logout</a>
-            <?php endif; ?>
-        </nav>
+        <?php else: ?>
+            <?php $role = $_SESSION['role'] ?? null; ?>
+            <nav class="nav-links"> 
+                <?php if ($role === 'student'): ?>
+                    <a href="<?= $BASE_URL ?>/student/student_dash.php">Dashboard</a>
+                    <a href="<?= $BASE_URL ?>/student/course.php">Courses</a>
+                    <a href="<?= $BASE_URL ?>/messaging/inbox.php">Messages</a>
+                    <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+                    <a href="<?= $BASE_URL ?>/settings.php">Settings</a>
+                    <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
+                    <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
 
-    <?php endif; ?>
+                <?php elseif ($role === 'tutor'): ?>
+                    <a href="<?= $BASE_URL ?>/tutor/tutor_dash.php">Dashboard</a>
+                    <a href="<?= $BASE_URL ?>/tutor/create_course.php">Create Course</a>
+                    <a href="<?= $BASE_URL ?>/messaging/inbox.php">Messages</a>
+                    <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+                    <a href="<?= $BASE_URL ?>/settings.php">Settings</a>
+                    <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
+                    <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+
+                <?php elseif ($role === 'admin'): ?>
+                    <a href="<?= $BASE_URL ?>/admin/admin_dash.php">Dashboard</a>
+                    <a href="<?= $BASE_URL ?>/admin/manage_users.php">Manage Users</a>
+                    <a href="<?= $BASE_URL ?>/admin/approve_courses.php">Approve Courses</a>
+                    <a href="<?= $BASE_URL ?>/admin/reports.php">Reports</a>
+                    <a href="<?= $BASE_URL ?>/settings.php">Settings</a>
+                    <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
+                    <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+                <?php endif; ?>
+            </nav>
+        <?php endif; ?>
+
+        <!-- HAMBURGER (MOBILE ONLY) -->
+        <span class="hamburger" onclick="openMenu()">&#9776;</span>
+
+    </div>
 </header>
+
+<!-- MOBILE MENU OVERLAY -->
+<div id="mobileMenu" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+
+    <div class="overlay-content">
+        <a href="<?= $BASE_URL ?>/index.php">Home</a>
+        <a href="<?= $BASE_URL ?>/about.php">How it works</a>
+        <a href="<?= $BASE_URL ?>/resource.php">Resource</a>
+
+        <?php if (!isset($_SESSION['user_id'])): ?>
+            <a href="<?= $BASE_URL ?>/login.php">Login</a>
+            <a href="<?= $BASE_URL ?>/register.php">Register</a>
+        <?php else: ?>
+            <?php if ($_SESSION['role'] === 'student'): ?>
+                <a href="<?= $BASE_URL ?>/student/student_dash.php">Dashboard</a>
+                <a href="<?= $BASE_URL ?>/student/course.php">Courses</a>
+                <a href="<?= $BASE_URL ?>/messaging/inbox.php">Messages</a>
+                <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+                <a href="<?= $BASE_URL ?>/settings.php">Settings</a>
+                <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
+                <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+
+            <?php elseif ($_SESSION['role'] === 'tutor'): ?>
+                <a href="<?= $BASE_URL ?>/tutor/tutor_dash.php">Dashboard</a>
+                <a href="<?= $BASE_URL ?>/tutor/create_course.php">Create Course</a>
+                <a href="<?= $BASE_URL ?>/messaging/inbox.php">Messages</a>
+                <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+                <a href="<?= $BASE_URL ?>/settings.php">Settings</a>
+                <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
+                <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+
+            <?php elseif ($_SESSION['role'] === 'admin'): ?>
+                <a href="<?= $BASE_URL ?>/admin/admin_dash.php">Dashboard</a>
+                <a href="<?= $BASE_URL ?>/admin/manage_users.php">Manage Users</a>
+                <a href="<?= $BASE_URL ?>/admin/approve_courses.php">Approve Courses</a>
+                <a href="<?= $BASE_URL ?>/admin/reports.php">Reports</a>
+                <a href="<?= $BASE_URL ?>/settings.php">Settings</a>
+                <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
+                <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+            <?php endif; ?>
+
+        <?php endif; ?>
+
+    </div>
+</div>

@@ -9,14 +9,10 @@
 }
 
 body {
-    background: #F4F7FB; /* soft, calm background */
+    background: #ffffff;
     color: #1A1A1A;
     line-height: 1.7;
-    font-size: 17px; /* slightly larger for readability */
-}
-
-/* Improve readability for dyslexic learners */
-body, input, button, a {
+    font-size: 20px;
     letter-spacing: 0.3px;
 }
 
@@ -24,57 +20,407 @@ body, input, button, a {
    ACCESSIBLE FOCUS OUTLINE
 ----------------------------------- */
 :focus {
-    outline: 3px solid #F5A623; /* bright orange focus ring */
+    outline: 3px solid #F5A623;
     outline-offset: 3px;
 }
-
-/* -----------------------------------
-   HEADINGS
------------------------------------ */
-h1, h2, h3 {
-    color: #0D1B2A;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-
 
 /* -----------------------------------
    HEADER + NAVIGATION
 ----------------------------------- */
 header {
-    background: #0D1B2A; /* deep navy for contrast */
-    padding: 18px 0;
-    margin-bottom: 30px;
+    background: #0D1B2A;
+    padding: 10px 0;
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    border-bottom: 1px solid #eee;
+}
+
+.nav-container {
+    max-width: 2200px;
+    margin: 10px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 120px;
+    border-radius: 50px;
+    max-width: fit-content;
 }
 
 header nav {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 30px;
 }
 
 header nav a {
     color: #EAF2F8;
     text-decoration: none;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 30px;
     padding: 8px 14px;
     border-radius: 8px;
     transition: 0.3s;
 }
 
 header nav a:hover {
-    background: #4A90E2; /* bright blue highlight */
+    background: #ff914d;
     color: white;
 }
 
-/* Active link */
 header nav a.active {
-    background: #50E3C2; /* mint green */
+    background: #50E3C2;
     color: #0D1B2A;
+}
+
+/* ================================
+   FULLSCREEN MOBILE OVERLAY MENU
+================================ */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.92);
+    overflow-x: hidden;
+    transition: 0.5s ease;
+}
+
+.overlay-content {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay a {
+    display: block;
+    padding: 12px;
+    font-size: 28px;
+    color: #dcdcdc;
+    text-decoration: none;
+    transition: 0.3s;
+    letter-spacing: 1px;
+}
+
+.overlay a:hover {
+    color: #ffffff;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 55px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================================
+   HAMBURGER ICON
+================================ */
+.hamburger {
+    font-size: 34px;
+    cursor: pointer;
+    display: none; /* hidden on desktop */
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+/* ================================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* LARGE TABLETS (Surface, iPad landscape) */
+@media (max-width: 1200px) {
+    header nav a {
+        font-size: 26px;
+    }
+    .logo img {
+        height: 100px;
+    }
+}
+
+/* MEDIUM TABLETS (iPad portrait, Galaxy Tab) */
+@media (max-width: 992px) {
+    header nav a {
+        font-size: 22px;
+    }
+    .logo img {
+        height: 90px;
+    }
+}
+
+/* MOBILE PHONES (hamburger menu activates) */
+@media (max-width: 768px) {
+
+    /* Hide desktop nav */
+    .nav-links {
+        display: none !important;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block !important;
+    }
+
+    /* Adjust logo size */
+    .logo img {
+        height: 60px;
+    }
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background video */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(6px);/* Optional: add a dark overlay for better text contrast */ 
+    background: rgba(0,0,0,0.4); mix-blend-mode: darken;
+}
+
+/* Text content */
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ff914d;
+    margin-top: 10px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 40px;
+    margin-bottom: 30px;
+    text-shadow: 0 5px 15px rgba(255,145,77,0.3);
+}
+
+.hero-btn {
+    background: #ff914d;
+    padding: 15px 35px;
+    font-size: 22px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #ff7a1a;
+}
+
+
+/* ================================
+   RESPONSIVE HERO
+================================ */
+
+/* Large tablets (Surface, iPad landscape) */
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 50px;
+    }
+    .hero-content p {
+        font-size: 22px;
+    }
+}
+
+/* Medium tablets (iPad portrait) */
+@media (max-width: 992px) {
+    .hero {
+        height: 70vh;
+    }
+    .hero-content h1 {
+        font-size: 42px;
+    }
+    .hero-content p {
+        font-size: 20px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content p {
+        font-size: 18px;
+    }
+    .hero-btn {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+}
+
+/* ================================
+   FOOTER
+================================ */
+.footer {
+    background: #0D1B2A;
+    color: #EAF2F8;
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Centered sections */
+.footer-section.center {
+    text-align: center;
+}
+
+.footer-section.center .social-icons {
+    justify-content: center;
+}
+
+/* Logo */
+.footer-logo {
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Headings */
+.footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ff914d;
+}
+
+/* Links */
+.footer-section a {
+    display: block;
+    color: #EAF2F8;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff914d;
+}
+
+/* Text */
+.footer-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ff914d;
+    max-width: 320px;
+    margin: 10px auto 0;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #EAF2F8;
+    font-size: 28px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff914d;
+    transform: scale(1.15);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 16px;
+    color: #cfd9e3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+    .footer-section {
+        min-width: 100%;
+    }
+    .footer-logo {
+        margin: 0 auto 20px;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #EAF2F8;
+    font-size: 28px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff914d;
+    transform: scale(1.15);
 }
