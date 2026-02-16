@@ -20,7 +20,7 @@ body {
    ACCESSIBLE FOCUS OUTLINE
 ----------------------------------- */
 :focus {
-    outline: 3px solid #F5A623;
+    outline: 3px solid #23f53c;
     outline-offset: 3px;
 }
 
@@ -59,8 +59,8 @@ header nav a {
     color: #EAF2F8;
     text-decoration: none;
     font-weight: 600;
-    font-size: 30px;
-    padding: 8px 14px;
+    font-size: 20px;
+    padding: 6px 12px;
     border-radius: 8px;
     transition: 0.3s;
 }
@@ -138,7 +138,7 @@ header nav a.active {
 /* LARGE TABLETS (Surface, iPad landscape) */
 @media (max-width: 1200px) {
     header nav a {
-        font-size: 26px;
+        font-size: 16px;
     }
     .logo img {
         height: 100px;
@@ -148,7 +148,7 @@ header nav a.active {
 /* MEDIUM TABLETS (iPad portrait, Galaxy Tab) */
 @media (max-width: 992px) {
     header nav a {
-        font-size: 22px;
+        font-size: 15px;
     }
     .logo img {
         height: 90px;
@@ -424,3 +424,177 @@ header nav a.active {
     color: #ff914d;
     transform: scale(1.15);
 }
+
+.why-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.why-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.why-card {
+    background: #ffffff;
+    padding: 30px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.why-card i {
+    font-size: 40px;
+    color: #ff914d;
+    margin-bottom: 15px;
+}
+
+.how-section {
+    background: #f7f9fc;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.how-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.how-step {
+    width: 260px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.how-step span {
+    display: inline-block;
+    background: #ff914d;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    line-height: 45px;
+    margin-bottom: 10px;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 70px 20px;
+    background: #0D1B2A;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.trust-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f7f9fc;
+}
+
+.trust-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 15px;
+}
+
+.trust-logos span {
+    font-size: 18px;
+    color: #0D1B2A;
+}
+
+.subjects-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.subject-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+
+.subject-card i {
+    font-size: 35px;
+    color: #ff914d;
+    margin-bottom: 10px;
+}
+
+.tutor-spotlight {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.tutor-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.tutor-card {
+    background: #ffffff;
+    padding: 25px;
+    width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.tutor-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.testimonials-section {
+    background: #f7f9fc;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 25px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    font-style: italic;
+}
+

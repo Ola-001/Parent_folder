@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care • Home</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-section">
+            <a href="index.html">
+                <img src="images/pet_care.jpeg" class="footer-logo" alt="Pet Care Logo">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger -->
+            <span class="hamburger" onclick="openNav()">&#9776;</span>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+        </div>
+    </div>
+
+    <!-- BOOKING HERO -->
+    <section class="booking-hero">
+        <h1>Book an Appointment</h1>
+        <p>Choose your service, pick a date, and we’ll take care of the rest.</p>
+    </section>
+
+    <!-- BOOKING FORM SECTION -->
+    <section class="booking-section">
+        <div class="booking-container">
+
+            <div class="booking-form">
+                <h2>Schedule Your Visit</h2>
+
+                <form action="booking-success.html" method="get" onsubmit="return showConfirmation()">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Your Phone Number" required>
+
+                    <select required>
+                        <option value="">Select a Service</option>
+                        <option>Pet Grooming</option>
+                        <option>Dog Walking</option>
+                        <option>Pet Sitting</option>
+                        <option>Pet Training</option>
+                        <option>Health Check‑ups</option>
+                        <option>Pet Boarding</option>
+                    </select>
+
+                    <label class="booking-label">Preferred Date</label>
+                    <input type="date" required>
+
+                    <label class="booking-label">Preferred Time</label>
+                    <select id="timeSelect" required>
+                        <option value="">Select a Time</option>
+                        <option>08:00 AM</option>
+                        <option>09:00 AM</option>
+                        <option>10:00 AM</option>
+                        <option>11:00 AM</option>
+                        <option>12:00 PM</option>
+                        <option>01:00 PM</option>
+                        <option>02:00 PM</option>
+                        <option>03:00 PM</option>
+                        <option>04:00 PM</option>
+                        <option>05:00 PM</option>
+                    </select>
+
+
+                    <textarea placeholder="Additional Notes (optional)"></textarea>
+
+                    <button type="submit" class="btn-primary">Confirm Booking</button>
+                </form>
+            </div>
+
+            <div class="booking-image">
+                <img src="images/download.jpg" alt="Pet booking image">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-about">
+                <img src="images/pet_care.jpeg" class="footer-logo" alt="Pet Care Logo">
+                <p>Trusted care for your pets — because they deserve the best.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Pet Care Services. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="style.js"></script>
+</body>
+</html>

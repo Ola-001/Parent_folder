@@ -12,13 +12,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role'])) {
     $role = $_SESSION['role'];
 
     if ($role === "student") {
-        header("Location: $BASE_URL/student/student_dash.php");
+        header("Location: $BASE_URL/index.php");
         exit;
     } elseif ($role === "tutor") {
-        header("Location: $BASE_URL/tutor/tutor_dash.php");
+        header("Location: $BASE_URL/index.php");
         exit;
     } elseif ($role === "admin") {
-        header("Location: $BASE_URL/admin/admin_dash.php");
+        header("Location: $BASE_URL/index.php");
         exit;
     }
 }
@@ -52,11 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Redirect based on role
                 if ($user['role'] === "student") {
-                    header("Location: $BASE_URL/student/student_dash.php");
+                    header("Location: $BASE_URL/index.php");
                 } elseif ($user['role'] === "tutor") {
-                    header("Location: $BASE_URL/tutor/tutor_dash.php");
+                    header("Location: $BASE_URL/index.php");
                 } elseif ($user['role'] === "admin") {
-                    header("Location: $BASE_URL/admin/admin_dash.php");
+                    header("Location: $BASE_URL/index.php");
                 }
                 exit;
 

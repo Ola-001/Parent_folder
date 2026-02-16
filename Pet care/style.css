@@ -1,0 +1,674 @@
+/* ============================
+   RESET & GLOBAL
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --primary: #4B86B4;
+    --accent: #FF7F50;
+    --light-bg: #f7f7f7;
+    --dark-text: #333;
+}
+
+/* ============================
+   HEADER
+============================ */
+header {
+    background-color: var(--primary);
+    border-bottom: 3px solid var(--accent);
+    padding: 25px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-section {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo,
+.footer-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+/* ============================
+   NAVIGATION
+============================ */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--accent);
+}
+
+/* ============================
+   HAMBURGER
+============================ */
+.hamburger {
+    display: none;
+    font-size: 35px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ============================
+   FULLSCREEN OVERLAY MENU
+============================ */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 36px;
+    color: var(--accent);
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover {
+    color: #ffffff;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #ffffff;
+}
+
+/* ============================
+   HERO (HOME)
+============================ */
+.hero {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.45)
+    ),
+    url("images/pet_care.jpeg") center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 24px;
+    color: #f0f0f0;
+    margin-top: 15px;
+}
+
+/* ============================
+   BUTTONS
+============================ */
+.btn-primary,
+.btn-secondary,
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    margin-top: 25px;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #e56f45;
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #3a6d8f;
+}
+
+.btn {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn:hover {
+    background: #e56f45;
+}
+
+/* ============================
+   SERVICES (HOME)
+============================ */
+.services-preview {
+    padding: 60px 20px;
+    background-color: var(--light-bg);
+    text-align: center;
+}
+
+.services-preview h2 {
+    font-size: 36px;
+    color: var(--primary);
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid var(--primary);
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.service-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary);
+    display: block;
+    margin: 0 auto 15px;
+}
+
+/* ============================
+   TESTIMONIALS
+============================ */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.testimonial-box {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-left: 5px solid var(--accent);
+    border-radius: 8px;
+}
+
+/* ============================
+   CTA
+============================ */
+.cta {
+    padding: 70px 20px;
+    background-color: var(--primary);
+    text-align: center;
+    color: #ffffff;
+}
+
+/* ============================
+   SERVICES PAGE HERO
+============================ */
+.services-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("images/pet_care.jpeg") center/cover no-repeat;
+    padding: 120px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.services-hero h1 {
+    font-size: 50px;
+}
+
+.services-hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* ============================
+   SERVICES PAGE GRID
+============================ */
+.services-section {
+    padding: 60px 20px;
+    background-color: var(--light-bg);
+}
+
+.services-section .services-grid {
+    gap: 30px;
+}
+
+.services-section .service-card {
+    border-radius: 12px;
+}
+
+/* ============================
+   FOOTER
+============================ */
+.site-footer {
+    background-color: #333;
+    color: #ffffff;
+    padding: 50px 20px 0;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent);
+}
+
+.footer-social h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    background-color: #4B86B4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 25px;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #555;
+    color: #cccccc;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .hamburger {
+        display: block !important;
+    }
+
+    .footer-container {
+        text-align: center;
+    }
+}
+
+/* ============================
+   ABOUT PAGE HERO
+============================ */
+.about-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("images/pet_care.jpeg") center/cover no-repeat;
+    padding: 120px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.about-hero h1 {
+    font-size: 50px;
+}
+
+.about-hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* ============================
+   ABOUT CONTENT
+============================ */
+.about-section {
+    padding: 60px 20px;
+    background-color: var(--light-bg);
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text h2 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+.about-list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.about-list li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--dark-text);
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid var(--primary);
+}
+
+/* ============================
+   CONTACT HERO
+============================ */
+.contact-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("images/pet_care.jpeg") center/cover no-repeat;
+    padding: 120px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-hero h1 {
+    font-size: 50px;
+}
+
+.contact-hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* ============================
+   CONTACT SECTION
+============================ */
+.contact-section {
+    padding: 60px 20px;
+    background-color: var(--light-bg);
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+}
+
+.contact-info i {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+/* Contact Form */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    width: fit-content;
+}
+
+/* ============================
+   BOOKING HERO
+============================ */
+.booking-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("images/pet_care.jpeg") center/cover no-repeat;
+    padding: 120px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.booking-hero h1 {
+    font-size: 50px;
+}
+
+.booking-hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* ============================
+   BOOKING SECTION
+============================ */
+.booking-section {
+    padding: 60px 20px;
+    background-color: var(--light-bg);
+}
+
+.booking-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    align-items: center;
+}
+
+.booking-form h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.booking-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    padding: 12px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.booking-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.booking-label {
+    font-weight: bold;
+    color: var(--primary);
+    margin-top: 10px;
+}
+
+.booking-image img {
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid var(--primary);
+}
+
+/* CONTACT INFO SUBHEADINGS */
+.contact-info h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: var(--primary);
+    font-weight: bold;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+}
+
+/* ============================
+   BOOKING SUCCESS PAGE
+============================ */
+.booking-success {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        rgba(75, 134, 180, 0.85),
+        rgba(75, 134, 180, 0.85)
+    ),
+    url("images/pet_care.jpeg") center/cover no-repeat;
+    padding: 20px;
+}
+
+.success-box {
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border-top: 6px solid var(--accent);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.success-box h1 {
+    font-size: 38px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.success-box p {
+    font-size: 18px;
+    color: var(--dark-text);
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.success-box .btn-primary {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 18px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

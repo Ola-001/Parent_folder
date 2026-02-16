@@ -15,23 +15,136 @@ $BASE_URL = "/Parent_folder/GIBLEARN";
 </head>
 <body>
 
-    <?php include "includes/header.php"; ?>
+<?php include "includes/header.php"; ?>
 
-    <section class="hero">
-        <div class="hero-video-container">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="<?= $BASE_URL ?>/videos/hero.mp4" type="video/mp4">
-            </video>
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-video-container">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="<?= $BASE_URL ?>/videos/hero.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="hero-content">
+        <h1>Find the Perfect Tutor for Any Subject</h1>
+        <p>One‑to‑one learning tailored to your goals, pace, and style.</p>
+        <a href="<?= $BASE_URL ?>/register.php" class="hero-btn">Start Learning</a>
+    </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="trust-section">
+    <div class="trust-container">
+        <p>Trusted by students, parents, and tutors across Gibraltar</p>
+        <div class="trust-logos">
+            <span><i class="fa-solid fa-star"></i> 4.9/5 Rating</span>
+            <span><i class="fa-solid fa-user-graduate"></i> Expert Tutors</span>
+            <span><i class="fa-solid fa-shield-halved"></i> Safe & Secure</span>
+        </div>
+    </div>
+</section>
+
+<!-- POPULAR SUBJECTS -->
+<section class="subjects-section">
+    <h2>Popular Subjects</h2>
+    <div class="subjects-grid">
+
+        <div class="subject-card">
+            <i class="fa-solid fa-calculator"></i>
+            <p>Maths</p>
         </div>
 
-        <div class="hero-content">
-            <h1>Welcome to GibLearn</h1>
-            <p>Your personalised tutoring platform designed for every learner.</p>
-            <a href="<?= $BASE_URL ?>/register.php" class="hero-btn">Get Started</a>
+        <div class="subject-card">
+            <i class="fa-solid fa-flask"></i>
+            <p>Science</p>
         </div>
-    </section>
 
-    <?php include "includes/footer.php"; ?>
+        <div class="subject-card">
+            <i class="fa-solid fa-book"></i>
+            <p>English</p>
+        </div>
+
+        <div class="subject-card">
+            <i class="fa-solid fa-globe"></i>
+            <p>Geography</p>
+        </div>
+
+        <div class="subject-card">
+            <i class="fa-solid fa-language"></i>
+            <p>Languages</p>
+        </div>
+
+        <div class="subject-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <p>Computer Science</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- TUTOR SPOTLIGHT -->
+<section class="tutor-spotlight">
+    <h2>Meet Some of Our Top Tutors</h2>
+
+    <div class="tutor-grid">
+
+        <div class="tutor-card">
+            <img src="<?= $BASE_URL ?>/images/MEE.png" alt="Tutor">
+            <h3>Sarah Johnson</h3>
+            <p>Maths & Physics Tutor</p>
+            <span>⭐ 4.9 (120 reviews)</span>
+        </div>
+
+        <div class="tutor-card">
+            <img src="<?= $BASE_URL ?>/images/MEE.png" alt="Tutor">
+            <h3>Daniel Perez</h3>
+            <p>English & Literature Tutor</p>
+            <span>⭐ 4.8 (98 reviews)</span>
+        </div>
+
+        <div class="tutor-card">
+            <img src="<?= $BASE_URL ?>/images/MEE.png" alt="Tutor">
+            <h3>Maria Gomez</h3>
+            <p>Biology & Chemistry Tutor</p>
+            <span>⭐ 5.0 (140 reviews)</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+    <h2>What Students Say</h2>
+
+    <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+            <p>"GibLearn helped me improve my grades faster than I expected. My tutor was amazing!"</p>
+            <h4>— Emily, Student</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"The platform is easy to use and the tutors are very professional."</p>
+            <h4>— Michael, Parent</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"As a tutor, I love how simple it is to manage my courses and students."</p>
+            <h4>— Sarah, Tutor</h4>
+        </div>
+
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta-section">
+    <h2>Ready to Start Learning?</h2>
+    <a href="<?= $BASE_URL ?>/register.php" class="hero-btn">Join GibLearn Today</a>
+</section>
+
+<?php include "includes/footer.php"; ?>
 
 <script src="<?= $BASE_URL ?>/assets/style.js"></script>
 </body>
