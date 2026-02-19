@@ -1,0 +1,45 @@
+/* LIGHT MODE */
+body.light {
+    background: #f4f7fb;
+    color: #222;
+}
+
+body.light .profile-card,
+body.light .stat-card {
+    background: #fff;
+    color: #222;
+}
+
+/* DARK MODE */
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+body.dark .profile-card,
+body.dark .stat-card {
+    background: #1e1e1e;
+    color: #eee;
+    border: 1px solid #333;
+}
+
+/* Mini course list */
+.course-mini-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.course-mini-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.course-mini-thumb {
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    object-fit: cover;
+}

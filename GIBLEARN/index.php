@@ -26,9 +26,9 @@ $BASE_URL = "/Parent_folder/GIBLEARN";
     </div>
 
     <div class="hero-content">
-        <h1>Find the Perfect Tutor for Any Subject</h1>
-        <p>One‑to‑one learning tailored to your goals, pace, and style.</p>
-        <a href="<?= $BASE_URL ?>/register.php" class="hero-btn">Start Learning</a>
+        <h1>Your Learning Journey Starts Here</h1>
+        <p>Whether you're studying, teaching, or managing, GibLearn gives you the tools to grow.</p>
+        <a href="<?= $BASE_URL ?>/register.php" class="hero-btn">Get Started</a>
     </div>
 </section>
 

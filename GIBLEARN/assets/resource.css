@@ -1,0 +1,144 @@
+/* HERO */
+.resource-hero {
+    background-image: url("../images/about.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.resource-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+}
+
+.resource-hero * {
+    position: relative;
+    z-index: 2;
+}
+
+.resource-hero h1 {
+    font-size: 50px;
+    color: #ff914d;
+}
+
+.resource-hero p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* CATEGORY BUTTONS */
+.resource-categories {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cat-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #eee;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.cat-btn:hover,
+.cat-btn.active {
+    background: #ff914d;
+    color: white;
+}
+
+/* RESOURCE GRID */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 20px 40px;
+}
+
+.resource-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    opacity: 1;
+}
+
+.resource-card i {
+    font-size: 40px;
+    color: #ff914d;
+    margin-bottom: 15px;
+}
+
+.resource-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.resource-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    display: inline-block;
+    background: #ff914d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #e6833b;
+}
+
+/* CTA */
+.resource-cta {
+    background: #f7f9fc;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.resource-cta h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.resource-cta p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background: #ff914d;
+    padding: 15px 30px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.cta-btn:hover {
+    background: #e6833b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .resource-hero h1 {
+        font-size: 36px;
+    }
+}

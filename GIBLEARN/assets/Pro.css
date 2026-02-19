@@ -1,0 +1,284 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    color: #0D1B2A;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 300px; /* Increased height for better spacing */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* VIDEO BACKGROUND */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(55%);
+}
+
+/* PROFILE INFO CENTERED */
+.profile-info {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 40px; /* pushes avatar slightly down for balance */
+}
+
+.profile-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.profile-info h2 {
+    margin-top: 12px;
+    font-size: 26px;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.role-badge {
+    background: #ff914d;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 6px;
+}
+
+
+/* ============================
+   STATS SECTION
+============================ */
+.profile-stats {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-card i {
+    font-size: 30px;
+    color: #ff914d;
+    margin-bottom: 10px;
+}
+
+/* ============================
+   MAIN PROFILE BODY
+============================ */
+.profile-container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.profile-left,
+.profile-right {
+    flex: 1;
+}
+
+/* ============================
+   PROFILE CARDS
+============================ */
+.profile-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.profile-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* ============================
+   QUICK ACTION BUTTONS
+============================ */
+.quick-btn {
+    display: block;
+    background: #f7f7f7;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.quick-btn:hover {
+    background: #ff914d;
+    color: white;
+}
+
+.quick-btn.logout {
+    background: #ff4d4d;
+    color: white;
+}
+
+.quick-btn.logout:hover {
+    background: #d63b3b;
+}
+
+/* ============================
+   PROGRESS BAR
+============================ */
+.progress-bar {
+    background: #eee;
+    height: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    background: #ff914d;
+    height: 100%;
+    border-radius: 20px;
+}
+
+/* ============================
+   SUBJECT LIST
+============================ */
+.subject-list {
+    list-style: none;
+    padding: 0;
+}
+
+.subject-list li {
+    background: #f7f7f7;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 900px) {
+    .profile-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
+}
+
+.course-mini-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.course-mini-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.course-mini-thumb {
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.messages-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.messages-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.message-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 5px solid #ccc;
+}
+
+.message-card.unread {
+    border-left-color: #ff914d;
+    background: #fff7f0;
+}
+
+.message-card.read {
+    opacity: 0.8;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.message-body {
+    margin-bottom: 12px;
+}
+
+.mark-read-btn {
+    background: #ff914d;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
