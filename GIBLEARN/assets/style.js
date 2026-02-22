@@ -32,3 +32,14 @@ buttons.forEach(btn => {
         });
     });
 });
+
+// Sticky Header Script
+window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+
+    if (window.scrollY > 20) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+});

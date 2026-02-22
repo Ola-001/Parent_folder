@@ -189,8 +189,6 @@ $BASE_URL = "/Parent_folder/GIBLEARN";
 </section>
 
 <?php include "includes/footer.php"; ?>
-
 <script src="<?= $BASE_URL ?>/assets/style.js"></script>
-
 </body>
 </html>

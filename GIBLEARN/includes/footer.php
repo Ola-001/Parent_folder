@@ -2,6 +2,11 @@
 $BASE_URL = "/Parent_folder/GIBLEARN";
 ?>
 
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>/assets/style.css">
+</head>
+
 <footer class="footer">
     <div class="footer-container">
 

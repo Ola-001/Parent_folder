@@ -1,0 +1,137 @@
+/* ================================
+   APPROVE COURSES — PREMIUM STYLE
+================================ */
+
+.course-approval-card {
+    display: flex;
+    gap: 25px;
+    background: var(--bg-dark2);
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s ease;
+    animation: fadeIn 0.4s ease forwards;
+    opacity: 0;
+}
+
+.course-approval-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+}
+
+/* Thumbnail */
+.course-thumb {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Middle Section */
+.course-middle {
+    flex: 1;
+}
+
+.course-middle h2 {
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.course-desc {
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+/* Meta Info */
+.course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.course-meta span {
+    background: rgba(255,255,255,0.05);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Tutor Info */
+.tutor-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.tutor-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    box-shadow: 0 6px 20px rgba(255,145,77,0.4);
+}
+
+.tutor-info strong {
+    color: var(--text-light);
+}
+
+.tutor-info small {
+    color: var(--text-muted);
+}
+
+/* Right Buttons */
+.course-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+.approve-btn,
+.reject-btn,
+.view-btn {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.25s ease;
+    color: #fff;
+}
+
+.approve-btn {
+    background: #28a745;
+}
+
+.reject-btn {
+    background: #b30000;
+}
+
+.view-btn {
+    background: var(--primary);
+}
+
+.approve-btn:hover,
+.reject-btn:hover,
+.view-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}

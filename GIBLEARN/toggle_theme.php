@@ -22,5 +22,6 @@ $stmt = $conn->prepare("UPDATE users SET theme = ? WHERE id = ?");
 $stmt->bind_param("si", $new_theme, $user_id);
 $stmt->execute();
 
-header("Location: profile.php");
+header("Location: " . $_SERVER['HTTP_REFERER']);
+
 exit;

@@ -190,7 +190,7 @@ $completed_lessons = $stmt->get_result()->fetch_assoc()['total'];
                 </div>
             <?php endif; ?>
 
-            <a href="student_courses.php" class="quick-btn">View All Courses</a>
+            <a href="<?= $BASE_URL ?>/student/course.php" class="quick-btn">View All Courses</a>
         </div>
         <?php endif; ?>
 

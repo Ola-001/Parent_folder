@@ -282,3 +282,11 @@ body {
     font-size: 14px;
     cursor: pointer;
 }
+
+.profile-card h4 {
+    margin-bottom: 8px;
+}
+
+.profile-card small {
+    color: #777;
+}

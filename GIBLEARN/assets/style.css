@@ -75,6 +75,41 @@ header nav a.active {
     color: #0D1B2A;
 }
 
+/* -----------------------------------
+   MAKE HEADER STICKY
+----------------------------------- */
+header {
+    position: fixed;        /* stays on screen */
+    top: 0;
+    left: 0;
+    width: 100%;            /* full width */
+    z-index: 9999;          /* stays above everything */
+    background: #0D1B2A;
+    padding: 10px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    border-bottom: 1px solid #eee;
+    transition: 0.3s ease;
+}
+
+/* When scrolling */
+header.sticky {
+    background: #0d0d0d;
+    padding: 6px 0; /* slightly smaller */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Prevent content from hiding behind header */
+body {
+    padding-top: 140px; /* adjust based on your header height */
+}
+
+
+/* Prevent layout jump */
+body {
+    padding-top: 130px; /* matches your header height */
+}
+
+
 /* ================================
    FULLSCREEN MOBILE OVERLAY MENU
 ================================ */

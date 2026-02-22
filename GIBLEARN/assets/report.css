@@ -1,0 +1,175 @@
+/* ================================
+   REPORTS PAGE — PREMIUM DESIGN
+================================ */
+
+/* Page container spacing */
+.admin-right {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Card Title */
+.admin-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+}
+
+.admin-card h3 i {
+    color: var(--primary);
+    font-size: 22px;
+}
+
+/* Stats Grid */
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.stat-box {
+    background: var(--bg-dark2);
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+}
+
+.stat-box i {
+    font-size: 36px;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.stat-box h4 {
+    font-size: 32px;
+    margin: 5px 0;
+    color: var(--text-light);
+}
+
+.stat-box p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* Recent Users Section */
+.admin-card .recent-user-item {
+    background: var(--bg-dark2);
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.25s ease;
+}
+
+.admin-card .recent-user-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.recent-user-item strong {
+    font-size: 17px;
+    color: var(--text-light);
+}
+
+.recent-user-item small {
+    display: block;
+    margin-top: 4px;
+    color: var(--text-muted);
+}
+
+/* Divider Title */
+.section-divider {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 25px 0 15px;
+    color: var(--text-light);
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================
+   RECENT USERS — CENTERED CARDS
+================================ */
+
+.recent-users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.recent-user-item {
+    background: var(--bg-dark2);
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s ease;
+}
+
+.recent-user-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.45);
+}
+
+/* Circle avatar */
+.user-circle {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 auto 12px;
+    box-shadow: 0 6px 20px rgba(255,145,77,0.4);
+}
+
+/* Name */
+.recent-user-item h4 {
+    color: var(--text-light);
+    margin-bottom: 6px;
+}
+
+/* Role badge */
+.role-badge-small {
+    background: var(--primary);
+    padding: 4px 10px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Email + joined text */
+.recent-user-item .email,
+.recent-user-item .joined {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 3px 0;
+}

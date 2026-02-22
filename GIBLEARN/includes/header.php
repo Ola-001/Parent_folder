@@ -45,7 +45,7 @@ $BASE_URL = "/Parent_folder/GIBLEARN";
                     <a href="<?= $BASE_URL ?>/tutor/tutor_dash.php"><i class="fa-solid fa-gauge"></i> Dashboard</a>
                     <a href="<?= $BASE_URL ?>/tutor/create_course.php"><i class="fa-solid fa-plus"></i> Create Course</a>
                     <a href="<?= $BASE_URL ?>/messaging/messages.php"><i class="fa-solid fa-envelope"></i> Messages</a>
-                    <a href="<?= $BASE_URL ?>/profile.php"><i class="fa-solid fa-user"></i> Profile</a>
+                    <a href="<?= $BASE_URL ?>/tutor/tutor_profile.php"><i class="fa-solid fa-user"></i> Profile</a>
                     <a href="<?= $BASE_URL ?>/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
 
                 <?php elseif ($role === 'admin'): ?>
@@ -53,7 +53,7 @@ $BASE_URL = "/Parent_folder/GIBLEARN";
                     <a href="<?= $BASE_URL ?>/admin/manage_users.php"><i class="fa-solid fa-users"></i> Manage Users</a>
                     <a href="<?= $BASE_URL ?>/admin/approve_courses.php"><i class="fa-solid fa-check"></i> Approve Courses</a>
                     <a href="<?= $BASE_URL ?>/admin/reports.php"><i class="fa-solid fa-chart-line"></i> Reports</a>
-                    <a href="<?= $BASE_URL ?>/profile.php"><i class="fa-solid fa-user"></i> Profile</a>
+                    <a href="<?= $BASE_URL ?>/admin/admin_profile.php"><i class="fa-solid fa-user"></i> Profile</a>
                     <a href="<?= $BASE_URL ?>/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
                 <?php endif; ?>
             </nav>
@@ -85,15 +85,13 @@ $BASE_URL = "/Parent_folder/GIBLEARN";
                 <a href="<?= $BASE_URL ?>/messaging/messages.php">Messages</a>
                 <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
                 <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
-                <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
 
             <?php elseif ($_SESSION['role'] === 'tutor'): ?>
                 <a href="<?= $BASE_URL ?>/tutor/tutor_dash.php">Dashboard</a>
                 <a href="<?= $BASE_URL ?>/tutor/create_course.php">Create Course</a>
                 <a href="<?= $BASE_URL ?>/messaging/messages.php">Messages</a>
-                <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+                <a href="<?= $BASE_URL ?>/tutor/tutor_profile.php">Profile</a>
                 <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
-                <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
 
             <?php elseif ($_SESSION['role'] === 'admin'): ?>
                 <a href="<?= $BASE_URL ?>/admin/admin_dash.php">Dashboard</a>
@@ -101,7 +99,7 @@ $BASE_URL = "/Parent_folder/GIBLEARN";
                 <a href="<?= $BASE_URL ?>/admin/approve_courses.php">Approve Courses</a>
                 <a href="<?= $BASE_URL ?>/admin/reports.php">Reports</a>
                 <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
-                <a href="<?= $BASE_URL ?>/profile.php">Profile</a>
+                <a href="<?= $BASE_URL ?>/admin/admin_profile.php">Profile</a>
             <?php endif; ?>
 
         <?php endif; ?>
