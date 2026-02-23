@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     <title>Admin Dashboard • GibLearn</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="<?= $BASE_URL ?>/assets/style.css">
-    <link rel="stylesheet" href="<?= $BASE_URL ?>/assets/tutor.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>/assets/admin_pro.css">
 </head>
 <body>
 
